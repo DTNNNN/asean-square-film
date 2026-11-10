@@ -1,0 +1,779 @@
+/* ==========================================================================
+   components.css - 元件樣式 (手感紙質、拼貼紙膠帶 Washi Tape、雜誌感微傾斜)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. 頂端導覽列 (Navbar) - 質感紙標題列
+   -------------------------------------------------------------------------- */
+.navbar-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(253, 251, 247, 0.96);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 2px solid var(--border);
+    box-shadow: 0 2px 10px rgba(74, 59, 50, 0.04);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 68px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--coffee);
+}
+
+.logo-badge {
+    background-color: var(--primary);
+    color: #ffffff;
+    font-size: 0.72rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: var(--radius-sm);
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    box-shadow: 1px 2px 4px rgba(107, 144, 128, 0.2);
+}
+
+.logo-text {
+    color: var(--coffee);
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    color: var(--coffee-muted);
+    font-weight: 500;
+    font-size: 0.92rem;
+    padding: 0.4rem 0.1rem;
+    position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary);
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary);
+    border-radius: 2px;
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--coffee);
+    transition: var(--transition);
+}
+
+/* --------------------------------------------------------------------------
+   2. 側邊欄 (Sidebar) - 書籤式章節目錄 (電腦版常駐左側)
+   -------------------------------------------------------------------------- */
+.sidebar {
+    position: sticky;
+    top: 92px;
+}
+
+.sidebar-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1.25rem 1.25rem;
+    box-shadow: 2px 4px 12px rgba(74, 59, 50, 0.04);
+    position: relative;
+}
+
+/* 側邊欄頂部的拼貼紙膠帶 */
+.sidebar-card::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    right: 25px;
+    width: 60px;
+    height: 18px;
+    background-color: var(--tape-mint);
+    transform: rotate(2deg);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--coffee);
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px dashed var(--coffee-border);
+    letter-spacing: 0.03em;
+}
+
+.sidebar-nav li {
+    margin-bottom: 0.45rem;
+}
+
+.sidebar-nav li:last-child {
+    margin-bottom: 0;
+}
+
+.sidebar-nav a {
+    display: block;
+    color: var(--coffee-muted);
+    font-size: 0.88rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+    border-left: 2px solid transparent;
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
+    background-color: var(--primary-light);
+    color: var(--primary-hover);
+    border-left: 2px solid var(--primary);
+    font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   3. Hero 主視覺區 (拼貼海報質感)
+   -------------------------------------------------------------------------- */
+.hero-section {
+    background-color: var(--coffee);
+    color: #ffffff;
+    padding: 3.5rem 2.8rem;
+    border-radius: var(--radius-md);
+    margin-bottom: 2.2rem;
+    position: relative;
+    box-shadow: 3px 8px 24px rgba(74, 59, 50, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: 40px;
+    width: 90px;
+    height: 24px;
+    background-color: var(--tape-mint);
+    transform: rotate(-3deg);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: 40px;
+    width: 80px;
+    height: 22px;
+    background-color: var(--tape-cream);
+    transform: rotate(2deg);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+.hero-tag {
+    display: inline-block;
+    color: #cce3de;
+    background-color: rgba(107, 144, 128, 0.25);
+    border: 1px dashed var(--primary);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.05em;
+}
+
+.hero-title {
+    font-size: 2.7rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.25;
+    margin-bottom: 1.1rem;
+    letter-spacing: 0.03em;
+}
+
+.hero-title span {
+    color: #cce3de;
+    position: relative;
+    display: inline-block;
+}
+
+.hero-title span::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background-color: rgba(107, 144, 128, 0.45);
+    z-index: -1;
+    border-radius: 3px;
+}
+
+.hero-subtitle {
+    font-size: 1.05rem;
+    color: #e2deda;
+    max-width: 620px;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 0.85rem;
+    flex-wrap: wrap;
+}
+
+/* --------------------------------------------------------------------------
+   4. 按鈕與標籤 (Buttons & Badges)
+   -------------------------------------------------------------------------- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.7rem 1.5rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border: none;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: #ffffff;
+    box-shadow: 1px 3px 8px rgba(107, 144, 128, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.btn-coffee {
+    background-color: var(--coffee);
+    color: #ffffff;
+    box-shadow: 1px 3px 8px rgba(74, 59, 50, 0.25);
+}
+
+.btn-coffee:hover {
+    background-color: var(--coffee-hover);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.nav-btn {
+    padding: 0.45rem 1rem;
+    font-size: 0.85rem;
+}
+
+.badge {
+    display: inline-block;
+    background-color: var(--primary-light);
+    color: var(--primary-hover);
+    border: 1px dashed var(--primary-border);
+    padding: 0.25rem 0.65rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   5. 通用卡片 (Cards)
+   -------------------------------------------------------------------------- */
+.card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1.6rem;
+    box-shadow: 2px 4px 14px rgba(74, 59, 50, 0.05);
+    position: relative;
+    transition: var(--transition);
+}
+
+.card:hover {
+    border-color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 2px 8px 20px rgba(74, 59, 50, 0.09);
+}
+
+.card-num {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 0.4rem;
+    display: inline-block;
+    border-bottom: 2px solid var(--primary-border);
+}
+
+.card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--coffee);
+}
+
+.card p {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   6. 拼貼紙膠帶類別 (Washi Tape Classes)
+   -------------------------------------------------------------------------- */
+.card-tape {
+    position: relative;
+}
+
+.card-tape::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-1deg);
+    width: 65px;
+    height: 18px;
+    background-color: var(--tape-mint);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    z-index: 2;
+}
+
+.card-tape:nth-child(even)::before {
+    transform: translateX(-50%) rotate(1.5deg);
+    background-color: var(--tape-cream);
+}
+
+/* --------------------------------------------------------------------------
+   7. STP 企劃卡片
+   -------------------------------------------------------------------------- */
+.stp-box {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1.6rem;
+    border-top: 4px solid var(--primary);
+    box-shadow: 2px 4px 14px rgba(74, 59, 50, 0.05);
+    position: relative;
+    transition: var(--transition);
+}
+
+.stp-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 2px 8px 20px rgba(74, 59, 50, 0.09);
+}
+
+.stp-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 0.06em;
+    margin-bottom: 0.35rem;
+}
+
+.stp-card-expanded {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1.75rem;
+    box-shadow: 2px 4px 14px rgba(74, 59, 50, 0.05);
+    position: relative;
+}
+
+.stp-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.85rem;
+}
+
+.stp-tag {
+    background-color: var(--coffee);
+    color: #ffffff;
+    font-size: 0.72rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+}
+
+.target-profile, .position-box {
+    background-color: var(--bg-section);
+    border: 1px dashed var(--coffee-border);
+    border-radius: var(--radius-sm);
+    padding: 1.35rem;
+    margin-top: 1.25rem;
+    position: relative;
+}
+
+.position-slogan {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--coffee);
+    margin-bottom: 0.45rem;
+}
+
+/* --------------------------------------------------------------------------
+   8. 影片放映區
+   -------------------------------------------------------------------------- */
+.video-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    margin-bottom: 2rem;
+    box-shadow: 2px 6px 18px rgba(74, 59, 50, 0.08);
+}
+
+.video-responsive-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 比例 */
+    background-color: #2b221d;
+}
+
+.video-responsive-wrapper iframe,
+.video-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--coffee);
+    color: #ffffff;
+    text-align: center;
+    padding: 1.5rem;
+    position: relative;
+}
+
+.play-box {
+    width: 54px;
+    height: 54px;
+    background-color: var(--primary);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    border-radius: var(--radius-sm);
+    margin-bottom: 1rem;
+    box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.video-placeholder h3 {
+    color: #ffffff;
+    font-size: 1.25rem;
+    margin-bottom: 0.4rem;
+}
+
+.video-placeholder p {
+    color: #d8d3cf;
+    max-width: 480px;
+    font-size: 0.9rem;
+}
+
+.video-meta-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background-color: #ffffff;
+    border-top: 1px solid var(--border);
+    font-size: 0.88rem;
+}
+
+.synopsis-box {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1.75rem;
+    line-height: 1.8;
+    box-shadow: 2px 4px 14px rgba(74, 59, 50, 0.04);
+}
+
+.synopsis-lead {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--coffee);
+    margin-bottom: 0.85rem;
+}
+
+/* --------------------------------------------------------------------------
+   9. 團隊成員卡片
+   -------------------------------------------------------------------------- */
+.team-member-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1.3rem 1.15rem;
+    border-top: 3px solid var(--primary);
+    box-shadow: 2px 4px 12px rgba(74, 59, 50, 0.04);
+    position: relative;
+    transition: var(--transition);
+}
+
+.team-member-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 2px 8px 18px rgba(74, 59, 50, 0.08);
+}
+
+.team-member-card:nth-child(3n+1)::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    right: 18px;
+    width: 40px;
+    height: 14px;
+    background-color: var(--tape-mint);
+    transform: rotate(2deg);
+}
+
+.member-name {
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: var(--coffee);
+    margin-bottom: 0.2rem;
+}
+
+.member-role {
+    font-size: 0.8rem;
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px dashed var(--border);
+}
+
+.member-note {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------------
+   10. 頁尾 (Footer)
+   -------------------------------------------------------------------------- */
+.footer {
+    background-color: var(--coffee);
+    color: #c9bfba;
+    padding: 2.5rem 0 1.5rem;
+    margin-top: 3.5rem;
+    border-top: 3px solid var(--primary);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-brand h3 {
+    color: #ffffff;
+    font-size: 1.15rem;
+    margin-bottom: 0.35rem;
+}
+
+.footer-brand p {
+    color: #b5a9a4;
+    font-size: 0.85rem;
+}
+
+.footer-links h4 {
+    color: #ffffff;
+    font-size: 0.92rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-links ul li {
+    margin-bottom: 0.35rem;
+}
+
+.footer-links a {
+    color: #d1c7c3;
+    font-size: 0.85rem;
+}
+
+.footer-links a:hover {
+    color: #cce3de;
+}
+
+.footer-copy {
+    font-size: 0.82rem;
+    text-align: right;
+    color: #9c8e88;
+}
+
+/* --------------------------------------------------------------------------
+   11. 平板與手持裝置適配 (徹底解決手機版側邊導覽重疊問題)
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 992px) {
+    /* 平板與手機上一律取消 position: sticky，絕不浮空遮擋下方內容 */
+    .sidebar {
+        position: static !important;
+        top: auto !important;
+        margin-bottom: 1.75rem !important;
+        width: 100% !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-card);
+        padding: 1.25rem;
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        gap: 0.85rem;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu li {
+        width: 100%;
+    }
+
+    .nav-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-section {
+        padding: 2rem 1.25rem;
+    }
+
+    .hero-title {
+        font-size: 1.9rem;
+    }
+
+    /* 手機版側邊欄導覽：以自適應標籤鈕橫向排列，俐落美觀、完全不卡文字 */
+    .sidebar {
+        position: static !important;
+        top: auto !important;
+        margin-bottom: 1.5rem !important;
+        width: 100% !important;
+    }
+
+    .sidebar-card {
+        padding: 1rem 1rem 1.2rem;
+        margin-bottom: 0;
+    }
+
+    .sidebar-card::before {
+        top: -8px;
+        right: 15px;
+        width: 50px;
+        height: 14px;
+    }
+
+    .sidebar-title {
+        font-size: 0.88rem;
+        margin-bottom: 0.65rem;
+        padding-bottom: 0.35rem;
+    }
+
+    .sidebar-nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+    }
+
+    .sidebar-nav li {
+        margin-bottom: 0;
+    }
+
+    .sidebar-nav a {
+        display: inline-block;
+        font-size: 0.82rem;
+        padding: 0.35rem 0.65rem;
+        background-color: var(--bg-section);
+        border: 1px solid var(--border);
+        border-left: 1px solid var(--border) !important;
+        border-radius: var(--radius-sm);
+        white-space: nowrap;
+    }
+
+    .sidebar-nav a:hover,
+    .sidebar-nav a.active {
+        background-color: var(--primary-light);
+        border-color: var(--primary);
+        color: var(--primary-hover);
+        font-weight: 600;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .footer-copy {
+        text-align: left;
+    }
+
+    .video-meta-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}
