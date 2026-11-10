@@ -1,0 +1,198 @@
+/* ==========================================================================
+   style.css - 全域變數、手作紙感紋理底色與排版設定 (Morandi Paper Collage)
+   話外之協 | 走出話裡的想像，看見話外的東協
+   ========================================================================== */
+
+:root {
+    /* 莫蘭迪薄荷綠 (Morandi Mint) - 溫柔低飽和 */
+    --primary: #6b9080;
+    --primary-hover: #507264;
+    --primary-light: #eaf1ed;
+    --primary-border: #b8cfc8;
+
+    /* 溫暖可可咖啡色 (Warm Cocoa / Mocha) */
+    --coffee: #4a3b32;
+    --coffee-hover: #362922;
+    --coffee-muted: #78665c;
+    --coffee-border: #ded5cb;
+
+    /* 手作紙質色調 (米白手揉紙、亞麻棉紙感) */
+    --bg-page: #f6f2ea;         /* 溫潤燕麥手作紙底色 */
+    --bg-card: #fdfbf7;         /* 暖白棉紙卡片底色 */
+    --bg-subtle: #eee8de;       /* 柔和亞麻襯底 */
+
+    /* 紙質邊框與文字 */
+    --border: #dfd8cc;          /* 手感紙質邊框 */
+    --text-main: #362b25;       /* 深焙可可文字 */
+    --text-muted: #6e6057;      /* 暖調說明文字 */
+
+    /* 拼貼紙膠帶色彩 (Washi Tape) */
+    --tape-mint: rgba(107, 144, 128, 0.45);   /* 薄荷半透紙膠帶 */
+    --tape-cream: rgba(222, 213, 203, 0.65);  /* 牛皮色紙膠帶 */
+    --tape-mocha: rgba(74, 59, 50, 0.25);
+
+    --radius-sm: 4px;
+    --radius-md: 7px;
+    --radius-lg: 12px;
+
+    --transition: all 0.25s ease;
+}
+
+/* 現代 CSS Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 徹底修復側邊欄跳轉對齊：預留頂端導覽列的高度緩衝 (96px) */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 96px;
+    font-size: 16px;
+}
+
+/* 針對所有具備 ID 的區塊精確設定捲動對齊邊界 */
+section[id], div[id], main[id] {
+    scroll-margin-top: 96px;
+}
+
+/* 手作紙質紋理背景 (純 CSS SVG 纖維與微皺褶感，不拖慢載入速度) */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+    background-color: var(--bg-page);
+    /* 嵌入細膩的紙質紋理與天然纖維雜質效果 */
+    background-image: 
+        radial-gradient(ellipse at 20% 20%, rgba(255, 255, 255, 0.5) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 80%, rgba(74, 59, 50, 0.03) 0%, transparent 70%),
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='paperNoise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paperNoise)' opacity='0.038'/%3E%3C/svg%3E");
+    background-attachment: fixed;
+    color: var(--text-main);
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 標題與段落排版 */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--coffee);
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: 0.02em;
+}
+
+p {
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+    font-size: 0.96rem;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--primary-hover);
+}
+
+ul {
+    list-style: none;
+}
+
+/* 頁面標題區塊 - 帶手撕紙邊線感 */
+.page-title-section {
+    padding: 2.2rem 0 1.6rem;
+    border-bottom: 2px dashed var(--coffee-border);
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.page-title-section h1 {
+    font-size: 2.1rem;
+    color: var(--coffee);
+    margin: 0.5rem 0;
+}
+
+.page-title-section .lead {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+}
+
+/* 區塊基礎間距 */
+.section {
+    padding: 2.5rem 0;
+}
+
+/* 亞麻手揉襯底區塊 */
+.section.bg-subtle {
+    background-color: var(--bg-subtle);
+    border-radius: var(--radius-md);
+    padding: 2.5rem 2rem;
+    margin: 2rem 0;
+    border: 1px solid var(--border);
+    position: relative;
+    box-shadow: inset 0 1px 4px rgba(74, 59, 50, 0.03);
+}
+
+.section-header {
+    margin-bottom: 2rem;
+}
+
+.section-header h2 {
+    font-size: 1.6rem;
+    color: var(--coffee);
+    position: relative;
+    padding-left: 0.85rem;
+    border-left: 4px solid var(--primary);
+    margin-bottom: 0.4rem;
+}
+
+.section-header p {
+    color: var(--coffee-muted);
+    font-size: 0.95rem;
+    padding-left: 0.85rem;
+}
+
+/* 拼貼標語大封底 (手作筆記風格) */
+.quote-banner {
+    background-color: var(--coffee);
+    color: #ffffff;
+    padding: 3rem 2.2rem;
+    border-radius: var(--radius-md);
+    text-align: center;
+    position: relative;
+    box-shadow: 2px 6px 18px rgba(74, 59, 50, 0.15);
+}
+
+/* 封底上方的模擬紙膠帶裝飾 */
+.quote-banner::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-1deg);
+    width: 140px;
+    height: 24px;
+    background-color: var(--tape-mint);
+    border-left: 2px dashed rgba(255, 255, 255, 0.4);
+    border-right: 2px dashed rgba(255, 255, 255, 0.4);
+}
+
+.quote-banner .quote-text {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #f7f5f0;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.quote-banner .quote-author {
+    color: #cce3de;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+}

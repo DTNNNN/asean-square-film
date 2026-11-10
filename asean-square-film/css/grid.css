@@ -1,0 +1,122 @@
+/* ==========================================================================
+   grid.css - CSS Grid 系統與 RWD (響應式設計) 規範
+   依據作業評分標準：Grid System、RWD 功能
+   ========================================================================== */
+
+/* 全域版心容器 */
+.container {
+    width: 100%;
+    max-width: 1180px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+/* 主版面 Grid 配置：側邊欄 (Sidebar) + 主要內容區 (Content Area) */
+.main-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 2.5rem;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+    align-items: start;
+}
+
+/* 核心 Grid 切版類別 */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+}
+
+/* STP 分析專用 Grid */
+.stp-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+/* 團隊成員 8 人 Grid (電腦版 4 欄 x 2 列) */
+.team-grid-8 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+}
+
+/* ==========================================================================
+   RWD 響應式斷點 (平版與手持裝置適配)
+   ========================================================================== */
+
+/* 平板尺寸 (992px 以下) */
+@media screen and (max-width: 992px) {
+    .main-layout {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .grid-4, .team-grid-8 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-3, .stp-grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 手機尺寸 (768px 以下) */
+@media screen and (max-width: 768px) {
+    .container {
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+    }
+
+    .main-layout {
+        grid-template-columns: 1fr;
+        padding-top: 1rem;
+        padding-bottom: 2.5rem;
+    }
+
+    /* 手機上一律單欄自適應，乾淨不跑版 */
+    .grid-2,
+    .grid-3,
+    .grid-4,
+    .stp-grid-container,
+    .team-grid-8 {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .section {
+        padding: 1.8rem 0;
+    }
+
+    .section.bg-subtle {
+        padding: 1.8rem 1.2rem;
+        margin: 1.5rem 0;
+    }
+
+    .page-title-section {
+        padding: 1.5rem 0 1rem;
+    }
+
+    .page-title-section h1 {
+        font-size: 1.6rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.35rem;
+    }
+}

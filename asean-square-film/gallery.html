@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>影片放映室 | 話外之協</title>
+    <meta name="description" content="影展專題《話外之協》專題微電影線上放映室與故事大綱。">
+    <meta name="keywords" content="話外之協, 影片放映, 影展專題, 故事腳本, 東協廣場">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+    <!-- 頂端導覽列 -->
+    <header class="navbar-wrapper">
+        <nav class="navbar container">
+            <a href="index.html" class="logo">
+                <span class="logo-badge">影展專題</span>
+                <span class="logo-text">話外之協</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="切換選單">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">首頁</a></li>
+                <li><a href="about.html" class="nav-link">企劃理念 & STP</a></li>
+                <li><a href="gallery.html" class="nav-link active">影片放映</a></li>
+                <li><a href="team.html" class="nav-link">團隊分工</a></li>
+                <li><a href="gallery.html" class="btn btn-primary nav-btn">放映室</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 主版面架構 -->
+    <div class="container main-layout">
+        
+        <!-- 側邊欄 (純章節導覽) -->
+        <aside class="sidebar">
+            <div class="sidebar-card">
+                <h3 class="sidebar-title">放映目錄</h3>
+                <ul class="sidebar-nav">
+                    <li><a href="#video-player" class="active">專題影片放映</a></li>
+                    <li><a href="#script">故事腳本</a></li>
+                    <li><a href="#spirit">廣告精神與目標</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- 主要內容區 -->
+        <main class="content-area">
+            
+            <section class="page-title-section">
+                <span class="badge">線上展映</span>
+                <h1>專題影片放映室</h1>
+                <p class="lead">走出話裡的想像，看見話外的東協。透過影像敘事解構刻板標籤。</p>
+            </section>
+
+            <!-- 專用影片播放區 (已嵌入 YouTube 正式影片) -->
+            <section id="video-player" class="section">
+                <div class="section-header">
+                    <h2>影展微電影放映</h2>
+                    <p>支援桌機與行動裝置 16:9 全螢幕高畫質播映</p>
+                </div>
+
+                <div class="video-card card-tape">
+                    <div class="video-responsive-wrapper" id="videoBox">
+                        <!-- 正式嵌入 YouTube 影片 -->
+                        <iframe 
+                            src="https://www.youtube.com/embed/mYIyYKoyNw0" 
+                            title="話外之協｜打破東協廣場刻板印象專題短片" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="video-meta-bar">
+                        <div>
+                            <strong>話外之協｜打破東協廣場刻板印象宣傳短片</strong>
+                        </div>
+                        <div style="color: var(--text-muted);">
+                            製作組別：行銷二甲 甲六
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 故事腳本 (依據企劃書 p14) -->
+            <section id="script" class="section bg-subtle">
+                <div class="section-header">
+                    <h2>故事腳本</h2>
+                    <p>以東協廣場傳說為引，展開一場文化探索之旅</p>
+                </div>
+
+                <div class="synopsis-box">
+                    <p class="synopsis-lead">
+                        「如果我們從未真正踏進去，所聽見的，不過都只是話裡的想像。」
+                    </p>
+                    <p>
+                        以東協廣場的「幽靈船與神秘寶藏」傳說作為故事開端，兩位主角循著藏寶圖線索進入東協廣場尋找寶藏。
+                    </p>
+                    <p>
+                        在尋寶過程中，主角遇見了印尼女孩及她的阿姨，透過彼此交談與互動，深入了解東協廣場與異國生活的深刻連結。
+                    </p>
+                    <p>
+                        最後，三人再次走進市場探索，主角們發現：真正值得尋找的並不是傳說中的寶藏，而是這裡不同文化與日常生活交會的真實痕跡，從而重新看見東協廣場真實而多元的樣貌。
+                    </p>
+                </div>
+            </section>
+
+            <!-- 廣告精神與目標 (依據企劃書 p14) -->
+            <section id="spirit" class="section">
+                <div class="section-header">
+                    <h2>廣告精神與推廣目標</h2>
+                    <p>將場域轉化為等待被重新發現的寶藏</p>
+                </div>
+
+                <div class="grid-2">
+                    <div class="card card-tape">
+                        <h3>廣告精神</h3>
+                        <p>影片想傳達的是：東協廣場本身就是一座等待被重新發現的寶藏。透過「尋寶」的概念，帶領觀眾跳脫既定印象，從食物、人與文化的探索中，發現這裡真正珍貴的，是所承載的文化、故事與人情。</p>
+                    </div>
+
+                    <div class="card card-tape">
+                        <h3>廣告目標</h3>
+                        <p>1. 打破大眾對東協廣場的既定印象與刻板認知，透過實際呈現當地的美食、文化、人群與日常，讓觀眾從「聽說」轉變為「親眼看見」。</p>
+                        <p>2. 建立東協廣場的新穎樣貌，讓觀眾重新理解這個地方的文化價值與生活溫度，並產生親自走訪與認識東協廣場的意願。</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- 頁尾 -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h3>話外之協</h3>
+                <p>走出話裡的想像，看見話外的東協</p>
+                <p>115-1 商學院 行銷系 數位行銷程式設計基礎 影展專題</p>
+            </div>
+            <div class="footer-links">
+                <h4>快速連結</h4>
+                <ul>
+                    <li><a href="index.html">首頁</a></li>
+                    <li><a href="about.html">企劃理念 & STP</a></li>
+                    <li><a href="gallery.html">影片放映</a></li>
+                    <li><a href="team.html">團隊分工</a></li>
+                </ul>
+            </div>
+            <div class="footer-copy">
+                <p>© 2026 話外之協 甲六團隊. All Rights Reserved.</p>
+                <p>支援 CSS Grid 佈局、RWD 響應式與 SEO</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

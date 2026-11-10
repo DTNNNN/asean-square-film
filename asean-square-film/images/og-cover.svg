@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#4a332d" />
+  <rect x="0" y="0" width="1200" height="16" fill="#38a3a5" />
+  <g transform="translate(100, 200)">
+    <rect x="0" y="0" width="220" height="40" rx="4" fill="#38a3a5" />
+    <text x="110" y="26" fill="#ffffff" font-family="-apple-system, 'Microsoft JhengHei', sans-serif" font-size="18" font-weight="bold" text-anchor="middle">影展專題 • 甲六</text>
+    <text x="0" y="125" fill="#ffffff" font-family="-apple-system, 'Microsoft JhengHei', sans-serif" font-size="68" font-weight="900">話外之協</text>
+    <text x="0" y="185" fill="#7dd3fc" font-family="-apple-system, 'Microsoft JhengHei', sans-serif" font-size="28" font-weight="bold">走出話裡的想像，看見話外的東協</text>
+    <text x="0" y="235" fill="#b5a9a4" font-family="-apple-system, 'Microsoft JhengHei', sans-serif" font-size="20">115-1 商學院 行銷系 數位行銷程式設計基礎</text>
+  </g>
+</svg>
